@@ -1,6 +1,36 @@
 export default function Features() {
   const features = [
     {
+      title: "Challenge Overview",
+      icon: "👩‍💻", 
+      content: [
+         "The challenge spans thirty days, during which participants are expected to create and submit a diverse range of projects. These projects can include websites, web pages, coding tools, or any other relevant coding endeavor. The primary goal is to encourage consistent coding practice and innovation."
+      ]
+        },
+    {
+      title: "Submission Platform  ",
+      icon: "📝", 
+      content: [
+         "Participants will use the dedicated submission platform to upload their daily projects. This platform serves as a centralized hub for showcasing participants' work, allowing for easy navigation and exploration. Each submission will be tagged with relevant information, such as project type, coding language, and date."
+      ]
+        },
+    
+    {
+      title: "Rating system ",
+      icon: "⭐", 
+      content: [
+         'Admins, representing the organizing body of the challenge, will play a crucial role in evaluating and rating the submitted projects. The rating criteria include factors such as creativity, functionality, code quality, and adherence to the daily theme or challenge prompt. Admins will provide constructive feedback to participants, fostering a learning environment.'
+      ]
+        },
+
+    {
+      title: "Participant Interaction",
+      icon: "🧠", 
+      content: [
+         "  The challenge promotes a sense of community by enabling participants to view and rate each other's projects. This interaction enhances the learning experience, as participants can draw inspiration from their peers, exchange ideas, and celebrate achievements. The submission platform facilitates seamless communication among participants."
+      ]
+    },
+    {
       title: "Daily Theme",
       icon: "🎨", 
       content: [
@@ -26,19 +56,19 @@ export default function Features() {
   ];
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen bg-gradient-to-r from-[#fcg9g9] to-[#a31621] p-4">
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-4 w-full max-w-6xl">
+    <div className="flex flex-col items-center justify-center min-h-screen bg-gradient-to-r from-[#fcg9g9] to-[#a31621] p-4 pb-10">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-10 w-full max-w-6xl">
         {features.map((feature, index) => (
           <div
             key={index}
-            className="bg-[#fcf7f8] px-8 p-10 border-2 border-[#a31621] hover:bg-[] hover:bg-opacity-75 transition-all duration-300  max-w-[390.504px] md:max-w-[652px] lg:h-[359px] flex flex-col items-start rounded-md"
+            className="bg-[#fcf7f8] px-8 p-10 pb-20 border-2 border-[#a31621] hover:bg-[] hover:bg-opacity-75 transition-all duration-300  max-w-[390.504px] md:max-w-[652px] lg:h-[420px] flex flex-col items-start rounded-md"
           >
-            <h4 className="text-[18px] mb-4 pb-2 capitalize leading-[22.16px] font-medium  font-cabinet md:text-[25px] md:leading-[37px] flex items-center">
+            <h4 className="text-[18px] mb-4 pb-2 capitalize leading-[22.16px] font-medium   md:text-[25px] md:leading-[37px] flex items-center">
               <span className="mr-2">{feature.icon}</span>
               {feature.title}
             </h4>
             {feature.content.map((paragraph, idx) => (
-              <p key={idx} className="text-[#a31621] text-[12px] leading-[20.963px] font-medium font-cabinet md:text-[18px] md:leading-[35px] max-w-[353.369px] lg:max-w-[590px]">
+              <p key={idx} className="text-[#a31621] text-[12px] leading-[20.963px] font-medium  md:text-[18px] md:leading-[35px] max-w-[353.369px] lg:max-w-[590px]">
                 {paragraph}
               </p>
             ))}

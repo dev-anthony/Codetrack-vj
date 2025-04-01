@@ -1,1 +1,31 @@
 @import "tailwindcss";
+@layer base {
+    @font-face {
+      font-family: 'Poppins';
+      src: url('/fonts/Poppins-Regular.ttf') format('truetype');
+      font-weight: 400;
+      font-style: normal;
+    }
+  }
+ 
+
+  .font-poppins {
+    font-family: 'Poppins', sans-serif;
+    
+  }
+  @keyframes gradientAnimation {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.animate-gradient {
+    background-size: 200% 200%;
+    animation: gradientAnimation 3s ease infinite; /* Adjust duration as needed */
+}
