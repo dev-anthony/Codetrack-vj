@@ -27,5 +27,5 @@
 
 .animate-gradient {
     background-size: 200% 200%;
-    animation: gradientAnimation 3s ease infinite; /* Adjust duration as needed */
+    animation: gradientAnimation 3s ease infinite; 
 }

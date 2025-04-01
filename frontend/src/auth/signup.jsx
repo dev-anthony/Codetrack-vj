@@ -109,7 +109,7 @@ export default function Signup() {
             
                 <p className="signup-link text-sm text-center text-[#fcf7f8]">
                 Already have an account?
-                    <a className="signup-link text-[#a31621] underline" href="#"> Sign in</a>
+                    <a className="signup-link text-[#a31621] underline" href="#/login"> Sign in</a>
                 </p>
             </div>
         </section>
