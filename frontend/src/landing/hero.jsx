@@ -12,7 +12,8 @@ export default function HeroSection() {
 
   return (
     
-    <div className="min-h-screen  bg-gradient-to-r from-[#fcg9g9] to-[#a31621] text-[#a31621] flex flex-col items-center justify-center font-poppins">
+  
+    <div className="min-h-screen  bg-black text-[#a31621] flex flex-col items-center justify-center font-poppin font-grotesk  ">
     
       <nav className="absolute top-0 left-0 w-full flex justify-between items-center p-10 lg:px-[180px]">
       <div className="flex items-center">
