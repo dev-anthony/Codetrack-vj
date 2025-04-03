@@ -1,7 +1,7 @@
 import Features from "./features";
 import Footer from "./footer";
-import HeroSection from "./hero";
-import Hero2 from "./hero2";
+
+import Hero from "./hero";
 
 import TestimonialSection from "./testmonial";
 
@@ -9,8 +9,8 @@ import TestimonialSection from "./testmonial";
 export default function Landing(){
     return(
         <div>
-            {/* <HeroSection /> */}
-            <Hero2 />
+        
+            <Hero />
               <Features />
             <TestimonialSection />
               <Footer />

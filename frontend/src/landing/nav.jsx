@@ -19,7 +19,7 @@ export default function Nav(){
                     <span className="mr-2"> 
                         <LiaDropbox className="text-xl" /> 
                     </span>
-                    <h1 className="text-[24px]   text-blue-400 hover:text-[#a31621]  font-bold">
+                    <h1 className="text-[24px]   text-blue-400 hover:  font-bold">
                         Code &lt;30&gt;
                     </h1>
                 </div>
@@ -31,8 +31,8 @@ export default function Nav(){
                   <FaTwitter className="text-xl" />
                 </div> */}
                 <div className="hidden md:flex gap-4">
-                  <button className="bg-[#fcf7f8] text-center hover:bg-[#a31621]/80 lg:px-[50px] hover:text-white lg:py-[15px] w-[120px] text-base py-2.5 lg:w-[155px]  font-medium text-blue-500 whitespace-nowrap font-chillax border-blue-400 border-[1.5px] border-solid px-3 focus:outline-none font-semibold transition-all duration-300 active:scale-[0.97] text-md">Login</button>
-                  <button className="bg-blue-400 text-center hover:bg-[#fcf7f8]/40 lg:px-[50px] text-white hover:text-white lg:py-[15px] w-[120px] text-base py-2.5 lg:w-[155px]  font-medium text-white whitespace-nowrap font-chillax border-blue-200 border-[1.5px] border-solid px-3 focus:outline-none font-semibold transition-all duration-300 text-md">Sign up</button>
+                  <button className="bg-[#fcf7f8] text-center hover:bg-[#a31621]/80 lg:px-[50px] hover:text-white lg:py-[15px] w-[120px] text-base py-2.5 lg:w-[155px]  font-medium text-blue-500 whitespace-nowrap  border-blue-400 border-[1.5px] border-solid px-3 focus:outline-none font-semibold transition-all duration-300 active:scale-[0.97] text-md rounded-xl">Login</button>
+                  <button className="bg-blue-400 text-center hover:bg-[#fcf7f8]/40 lg:px-[50px] text-white hover:text-white lg:py-[15px] w-[120px] text-base py-2.5 lg:w-[155px]  font-medium text-white whitespace-nowrap  border-blue-200 border-[1.5px] border-solid px-3 focus:outline-none font-semibold transition-all duration-300 text-md rounded-full">Sign up</button>
                   {/* <button className="bg-[#a31621] text-center hover:bg-[#fcf7f8]/40 lg:px-[50px] lg:py-[15px] w-full text-base py-2.5 lg:w-[155px] text-[20px] font-medium text-[#fcf7f8] whitespace-nowrap font-chillax border-[#a31621] border-[1.5px] border-solid px-3 focus:outline-none font-semibold transition-all duration-300 active:scale-[0.97]">Sign up</button> */}
                 </div>
               

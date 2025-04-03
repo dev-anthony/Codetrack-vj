@@ -57,25 +57,26 @@ export default function Features() {
 
   return (
     <div className="flex flex-col items-center justify-center min-h-screen bg-black p-4 pb-10 font-grotesk">
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 w-full max-w-6xl">
-        {features.map((feature, index) => (
-          <div
-            key={index}
-            className="bg-[#fcf7f8] px-8 p-10 pb-20 border-2 border-blue-400 hover:bg-[] hover:bg-opacity-75 transition-all duration-300  max-w-[390.504px] md:max-w-[652px] lg:h-[480px] flex flex-col items-start rounded-md"
-          >
-            <h4 
-            className="text-[18px]  pb-2 capitalize leading-[22.16px] font-medium   md:text-[15px] md:leading-[37px] flex items-center">
-              <span className="mr-2">{feature.icon}</span>
-              {feature.title}
-            </h4>
-            {feature.content.map((paragraph, idx) => (
-              <p key={idx} className="text-gray-900 text-[12px] leading-[20.963px] font-medium  md:text-[15px] md:leading-[35px] max-w-[353.369px] lg:max-w-[590px]">
-                {paragraph}
-              </p>
-            ))}
-          </div>
+  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 w-full max-w-6xl">
+    {features.map((feature, index) => (
+      <div
+        key={index}
+        className="bg-[#fcf7f8] px-8 py-10 border-2 border-blue-400 hover:bg-opacity-75 transition-all duration-300 max-w-[390px] md:max-w-[652px] lg:h-[380px] flex flex-col items-start rounded-md"
+      >
+        <h4 
+          className="text-[18px] pb-2 capitalize leading-[22.16px] font-medium md:text-[20px] md:leading-[28px] flex items-center"
+        >
+          <span className="mr-2">{feature.icon}</span>
+          {feature.title}
+        </h4>
+        {feature.content.map((paragraph, idx) => (
+          <p key={idx} className="text-gray-900 text-[12px] leading-[20.963px] font-medium md:text-[15px] md:leading-[25px] max-w-[353px] lg:max-w-[590px]">
+            {paragraph}
+          </p>
         ))}
       </div>
-    </div>
+    ))}
+  </div>
+</div>
   );
 }
