@@ -68,16 +68,39 @@ import { FaCalendarCheck, FaMoon, FaSun } from "react-icons/fa";
       </span>
     </div>
 
-    <span
+    
+  <div className="hidden lg:flex">
+  <label className="inline-flex items-center relative cursor-pointer">
+      <input
+        className="peer hidden"
+        id="toggle"
+        type="checkbox"
+        onChange={toggledark}
+      />
+      <div className={`relative w-[100px] h-[40px] rounded-full transition-colors duration-300 ${darkmode ? 'bg-zinc-500' : 'bg-gray-200'}`}>
+        <div className={`absolute w-[40px] h-[30px] rounded-full top-[5px] left-[5px] transition-all duration-300 ${darkmode ? '' : 'bg-gradient-to-r from-orange-500 to-yellow-400 peer-checked:left-[55px]'}`}></div>
+      </div>
+      
+        <FaSun className={`${darkmode ? "fill-gray-400": "fill-white"} absolute w-6 h-6 left-[13px] transition-opacity duration-300`}/>
+    
+        <FaMoon className="fill-gray-400 z-10 opacity-60 absolute w-6 h-6 right-[13px] transition-opacity duration-300" />
+      
+      <div className={`absolute w-[40px] h-[30px] left-[55px] ${darkmode ? 'bg-gradient-to-r from-gray-900 to-gray-600  peer-checked:left-[55px]' : ''} rounded-full top-[5px] left-[5px] transition-all duration-300 `}></div>
+    </label>
+  </div>
+
+
+<div className="lg:hidden">
+<span
       className={`flex h-8 w-8 items-center justify-center rounded-full border ${darkmode ? 'border-neutral-700 text-neutral-100' : 'border-zinc-300 text-slate-900'} md:h-10 md:w-10 cursor-pointer`}
       onClick={toggledark}
     >
       {darkmode ? <FaSun size='20' /> : <FaMoon size='20' />}
     </span>
+</div>
+  
 
-    <span className={`flex h-8 w-8 items-center justify-center rounded-full border ${darkmode ? 'border-neutral-700 text-neutral-100' : 'border-zinc-300 text-slate-900'} md:h-10 md:w-10 cursor-pointer`}>
-      <Logout size="20" />
-    </span>
+  
   </div>
 </section>
       

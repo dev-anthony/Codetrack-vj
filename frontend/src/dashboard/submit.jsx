@@ -3,7 +3,7 @@ import img from '../assets/image.png';
 import { FaPlus, FaTimes } from 'react-icons/fa';
 import { useSelector } from 'react-redux';
 
-export default function ProfileInfo() {
+export default function SubmitProject() {
   const [screenshots, setScreenshots] = useState([]);
 
   const handleScreenshotChange = (event) => {
@@ -51,7 +51,7 @@ export default function ProfileInfo() {
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         <div>
           <label className={`block text-sm font-medium ${darkmode ? 'text-neutral-100' : 'text-gray-700'}`}>
-            Live Link
+            Live Link *
           </label>
           <input
             type="text"
@@ -64,7 +64,7 @@ export default function ProfileInfo() {
             Uploading For Day
           </label>
           <input
-            type="text"
+            type="number"
             className={`mt-1 block w-full rounded-lg border ${darkmode ? 'border-neutral-700 bg-gray-800 text-neutral-100' : 'border-gray-300 bg-gray-100'} shadow-sm py-3 px-4 focus:border-indigo-500 focus:ring-indigo-500`}
             placeholder="10"
           />
@@ -74,7 +74,7 @@ export default function ProfileInfo() {
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         <div>
           <label className={`block text-sm font-medium ${darkmode ? 'text-neutral-100' : 'text-gray-700'}`}>
-            Repository Link
+            Repository Link *
           </label>
           <input
             type="text"
@@ -99,7 +99,7 @@ export default function ProfileInfo() {
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         <div>
           <label className={`block text-sm font-medium ${darkmode ? 'text-neutral-100' : 'text-gray-700'}`}>
-            Languages*
+            Languages *
           </label>
           <input
             type="text"
