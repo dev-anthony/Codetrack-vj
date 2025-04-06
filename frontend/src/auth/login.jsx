@@ -7,28 +7,39 @@ export default function Login() {
     const [email,setEmail] = useState('')
     const [password, setPassword] = useState('')
     const [loading, setLoading] = useState(false)
+        const [error, setError] = useState({email: '', password: '',});
     const navigate = useNavigate()
     const togglePasswordVisibility = () => {
         setShowPassword(!showPassword);
     };
-
     const handleLogin = (e) => {
-      e.preventDefault()
-      
-      if(!email || !password){
-        return;
+      e.preventDefault();
+      setLoading(true);
+      setError({ email: '', password: '',  });
+    
+      let hasError = false;
+      if (!email || !password) {
+          alert('Email and password are required.');
+          setLoading(false);
+          return;
       }
-      setLoading(true)
-    if (password.length <= 6){
-      alert('password should be more than 6')
-    } else{
+  
+      if (password.length <= 6) {
+        setError(prev => ({ ...prev, password: "Password should be more than 6 characters." }));
+        hasError = true;
+          // setLoading(false);
+          // return;
+      }
+  
+      if (hasError) {
+        setLoading(false);
+        return; 
+    }
       setTimeout(() => {
-        setLoading(false)
+          navigate('/dash');
+          setLoading(false);
       }, 2000);
-    navigate('/dash')
-    }
-
-    }
+  };
     return (
         <section className="bg-black min-h-screen flex justify-center items-center pt-10 pb-10 font-grotesk p-4">
             <div className="form-container lg:p-8 p-6 px-8 w-full max-w-md lg:max-w-2xl bg-[#51596C33]  text-sm font-sans text-white flex flex-col gap-6 rounded-lg shadow-md">
@@ -85,6 +96,7 @@ export default function Login() {
         required
         onChange={e=> setPassword(e.target.value)}
       />
+
       <span
         className="absolute inset-y-0 top-7 right-10  flex items-center   cursor-pointer border-l border-gray-500"
         onClick={togglePasswordVisibility}
@@ -95,6 +107,7 @@ export default function Login() {
           <FaEye className="text-gray-500  relative left-4" />
         )}
       </span>
+      {error.password && <span className="absolute top-20 inset-0 text-sm text-red-400">{error.password}</span>}
     </div>
                     <a className="forgot-password-link text-blue-300 text-sm underline self-end" href="#">Forgot Password</a>
                     <button 
