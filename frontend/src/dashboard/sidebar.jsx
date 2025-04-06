@@ -47,7 +47,7 @@ const Sidebar = ({isSidebarOpen,setSidebarOpen}) => {
         <span className={`${darkmode? "text-white":''} text-sm`}>Menu</span>
         <li onClick={closeSidebar}>
           <NavLink
-            to="#"
+            to="/submitproject"
             className={`flex items-center p-3 text-gray-900 rounded-lg ${darkmode ? 'text-white hover:bg-gray-700' : 'hover:bg-gray-100'}`}
           >
             <FaPodcast size="25" className={`text-gray-500 group-hover:text-gray-900 ${darkmode ? 'dark:group-hover:text-white' : ''}`} />
@@ -56,7 +56,7 @@ const Sidebar = ({isSidebarOpen,setSidebarOpen}) => {
         </li>
         <li>
           <NavLink
-            to="#"
+            to="/leaderboard"
             className={`flex items-center p-3 text-gray-900 rounded-lg ${darkmode ? 'text-white hover:bg-gray-700' : 'hover:bg-gray-100'}`}
           >
             <CiViewBoard className={`w-5 h-5 text-gray-500 group-hover:text-gray-900 ${darkmode ? 'dark:group-hover:text-white' : ''}`} />
@@ -69,7 +69,7 @@ const Sidebar = ({isSidebarOpen,setSidebarOpen}) => {
         <span className={`${darkmode? "text-white":''} text-sm`}>Profile</span>
         <li onClick={closeSidebar}>
           <NavLink
-            to="#"
+            to="/profile"
             className={`flex items-center p-3 text-gray-900 rounded-lg ${darkmode ? 'text-white hover:bg-gray-700' : 'hover:bg-gray-100'}`}
           >
             <FaUser Astronaut size="25" className={`text-gray-500 group-hover:text-gray-900 ${darkmode ? 'dark:group-hover:text-white' : ''}`} />

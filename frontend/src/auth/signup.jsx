@@ -20,48 +20,52 @@ export default function Signup() {
     const toggleConfirmPassword = () => {
         setShowConfirmPassword(!showConfirmPassword);
     };
-
     const handleSignUp = (e) => {
-        e.preventDefault();
-        setLoading(true);
-        setError({ fullname: '', email: '', password: '', confirmpassword: '' }); // Reset errors
-
-        let hasError = false;
-
-        if (!fullname || fullname.length < 4) {
-            setError(prev => ({ ...prev, fullname: "Name should be more than 4 characters." }));
-            hasError = true;
-        }
-        if (!email) {
-            setError(prev => ({ ...prev, email: "Email is required." }));
-            hasError = true;
-        }
-        if (!password || password.length <= 6) {
-            setError(prev => ({ ...prev, password: "Password should be more than 6 characters." }));
-            hasError = true;
-        }
-        if (password !== confirmpassword) {
-            setError(prev => ({ ...prev, confirmpassword: "Passwords do not match." }));
-            hasError = true;
-        }
-
-        if (hasError) {
-            setLoading(false);
-            return; 
-        }
-
-       
-        try {
-            setLoading(true)
-         
-        } catch (error) {
-            console.log(error);
-            setError(prev => ({ ...prev, general: "An error occurred during signup." }));
-        } finally {
-            setLoading(false);
-        }
-    };
-
+      e.preventDefault();
+      setLoading(true);
+      setError({ fullname: '', email: '', password: '', confirmpassword: '' });
+  
+      let hasError = false;
+  
+      if (!fullname || fullname.length < 4) {
+          setError(prev => ({ ...prev, fullname: "Name should be more than 4 characters." }));
+          hasError = true;
+      }
+      if (!email) {
+          setError(prev => ({ ...prev, email: "Email is required." }));
+          hasError = true;
+      }
+      if (!password || password.length <= 6) {
+          setError(prev => ({ ...prev, password: "Password should be more than 6 characters." }));
+          hasError = true;
+      }
+      if (password !== confirmpassword) {
+          setError(prev => ({ ...prev, confirmpassword: "Passwords do not match." }));
+          hasError = true;
+      }
+  
+      if (hasError) {
+          setLoading(false);
+          return; 
+      }
+      setTimeout(() => {
+        navigate('/dash');
+        setLoading(false);
+    }, 2000);
+      // try {
+          
+      //     setTimeout(() => {
+      //         //
+      //         navigate('/dash');
+      //         setLoading(false);
+      //     }, 2000); 
+      // } catch (error) {
+      //     console.log(error);
+      //     setError(prev => ({ ...prev, general: "An error occurred during signup." }));
+      // } finally {
+      //     setLoading(false);
+      // }
+  };
     return (
         <section className="bg-black min-h-screen flex justify-center items-center pt-10 pb-10 font-grotesk p-4">
             <div className="form-container lg:p-8 p-6 px-8 w-full max-w-md lg:max-w-2xl bg-[#51596C33] text-sm font-sans text-white flex flex-col gap-6 rounded-lg shadow-md">
@@ -80,7 +84,7 @@ export default function Signup() {
                             onChange={e => setFullName(e.target.value)}
                             value={fullname}
                         />
-                        {error.fullname && <span className="block text-sm text-red-400">{error.fullname}</span>}
+                        {error.fullname && <span className="relative top-[-10px] inset-0 text-sm text-red-400">{error.fullname}</span>}
                     </div>
                     <div className="flex flex-col gap-1">
                         <label htmlFor="email" className="block">Email *</label>
@@ -104,7 +108,7 @@ export default function Signup() {
                             required
                             value={password}
                         />
-                        {error.password && <span className="block text-sm text-red-400">{error.password}</span>}
+                        {error.password && <span className="absolute top-20 inset-0 text-sm text-red-400">{error.password}</span>}
                         <span
                             className="absolute inset-y-0 top-7 right-10 flex items-center cursor-pointer border-l border-gray-500"
                             onClick={togglePasswordVisibility}
@@ -126,7 +130,7 @@ export default function Signup() {
                             onChange={e => setConfirmPassword(e.target.value)}
                             value={confirmpassword}
                         />
-                        {error.confirmpassword && <span className="block text-sm text-red-400">{error.confirmpassword}</span>}
+                        {error.confirmpassword && <span className="absolute top-20 inset-0 text-sm text-red-400">{error.confirmpassword}</span>}
                         <span
                             className="absolute inset-y-0 top-7 right-10 flex items-center cursor-pointer border-l border-gray-500"
                             onClick={toggleConfirmPassword}

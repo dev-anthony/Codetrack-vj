@@ -1,7 +1,7 @@
 import { configureStore } from "@reduxjs/toolkit";
 const initialState =  {
-    darkMode: false,
-    alertMode : false,
+    darkMode: true,
+   
     
 }
 const reducer = ( state = initialState, action) => {
