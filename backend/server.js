@@ -12,7 +12,7 @@ app.use(express.json());
 app.get('/', (req, res) => {
   res.send("Hello world")
 })
-app.get('/login', require('./routes/login'));
+app.use('/login', require('./routes/login'));
 app.use('/register', require('./routes/register'));
 
 
