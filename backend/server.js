@@ -2,8 +2,9 @@ require('dotenv').config();
 const express = require('express');
 const app = express();
 const dbConn = require('./config/dbConn');
-const PORT = process.env.PORT || 3000;
 const firebaseInit = require('./firebase');
+const verifyIdToken = require('./middleware/verifyIdToken');
+const PORT = process.env.PORT || 3000;
 
 firebaseInit();
 
@@ -13,7 +14,7 @@ app.get('/', (req, res) => {
   res.send("Hello world")
 })
 app.use('/login', require('./routes/login'));
-app.use('/register', require('./routes/register'));
+app.use('/register', verifyIdToken, require('./routes/register'));
 
 
 
