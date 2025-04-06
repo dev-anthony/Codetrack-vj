@@ -3,11 +3,9 @@ const express = require('express');
 const app = express();
 const dbConn = require('./config/dbConn');
 const PORT = process.env.PORT || 3000;
-const admin = require('firebase-admin');
-const serviceAccount = require('./serviceAccountKey.json');
-admin.initializeApp({
-  credential: admin.credential.cert(serviceAccount)
-});
+const firebaseInit = require('./firebase');
+
+firebaseInit();
 
 app.use(express.json());
 
