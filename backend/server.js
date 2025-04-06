@@ -13,7 +13,7 @@ app.use(express.json());
 app.get('/', (req, res) => {
   res.send("Hello world")
 })
-app.use('/login', require('./routes/login'));
+app.use('/login', verifyIdToken require('./routes/login'));
 app.use('/register', verifyIdToken, require('./routes/register'));
 
 
