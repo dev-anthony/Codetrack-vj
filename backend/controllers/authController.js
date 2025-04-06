@@ -7,8 +7,8 @@ const handleLogin = async (req, res) => {
   
   try {
     const user = await User.findOne({uid});
-    if (!foundUser) return res.status(402).send('user not found');
-    return res.send('login successful');
+    if (!user) return res.status(402).send('user not found');
+    return res.send(user);
   } catch(err) {
     console.log(err);
     res.status(500).send('Internal server error');
